@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Sayang ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Cormorant Garamond (display) + Lato (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE 1: PASSWORD
+  ============================================================ -->
+  <section id="page-password" class="page page--active">
+    <!-- Starfield canvas -->
+    <canvas id="stars-canvas-pw"></canvas>
+
+    <div class="pw-card glass-card">
+      <div class="pw-lock-icon">🔒</div>
+      <h1 class="pw-title">Secret Birthday Page</h1>
+      <p class="pw-subtitle">Masukkan password dulu ya ❤️</p>
+
+      <div class="pw-input-wrap">
+        <input
+          id="pw-input"
+          type="password"
+          class="pw-input"
+          placeholder="Password..."
+          autocomplete="off"
+        />
+        <button id="pw-btn" class="btn-primary">Unlock</button>
+      </div>
+
+      <p class="pw-hint">Hint: tanggal yang selalu kita ingat</p>
+      <p id="pw-error" class="pw-error" aria-live="polite"></p>
+
+      <!-- Unlock ripple overlay -->
+      <div id="pw-unlock-overlay" class="pw-unlock-overlay" hidden>
+        <div class="pw-unlock-ring"></div>
+        <div class="pw-unlock-ring pw-unlock-ring--2"></div>
+        <div class="pw-unlock-icon-big">🔓</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 2: OPENING JOKE
+  ============================================================ -->
+  <section id="page-joke" class="page" hidden>
+    <canvas id="stars-canvas-joke"></canvas>
+
+    <div class="joke-container">
+      <div id="joke-text" class="joke-text" aria-live="polite"></div>
+      <button id="joke-next-btn" class="btn-primary btn--hidden" aria-label="Lanjut ke halaman berikutnya">
+        Lanjut →
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 3: HERO BIRTHDAY SECTION
+  ============================================================ -->
+  <section id="page-hero" class="page page-hero" hidden>
+    <!-- Full-bleed background photo placeholder -->
+    <div class="hero-photo-wrap">
+      <!--
+        Letakkan foto utama di: assets/hero.jpg
+        Ganti filename jika berbeda, misal: assets/hero.png
+      -->
+      <img
+        src="assets/hero.jpg"
+        alt="Foto utama"
+        class="hero-photo"
+        id="hero-photo"
+        onerror="this.src='https://placehold.co/900x1200/1a1a2e/ff7eb6?text=hero.jpg+belum+ada'"
+      />
+      <div class="hero-photo-overlay"></div>
+    </div>
+
+    <div class="hero-content fade-in-up">
+      <p class="hero-eyebrow">✨ &nbsp; 20 Tahun &nbsp; ✨</p>
+      <h1 class="hero-title">Happy Birthday<br /><em>Sayang</em> ❤️</h1>
+      <p class="hero-sub">
+        Hari ini dunia sedang merayakan hadirnya seseorang<br />
+        yang sangat berarti dalam hidupku.
+      </p>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="scroll-dot"></span>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 4: DIGITAL BOUQUET
+  ============================================================ -->
+  <section id="page-bouquet" class="page page-bouquet" hidden>
+    <div class="bouquet-section reveal-section">
+      <!-- The entire bouquet is drawn purely with HTML + CSS + JS -->
+      <div id="bouquet-root" class="bouquet-root" aria-hidden="true">
+
+        <!-- === STEM & LEAVES === -->
+        <div class="stem"></div>
+        <div class="leaf leaf--left"></div>
+        <div class="leaf leaf--right"></div>
+
+        <!-- === FLOWERS === -->
+        <!-- Each flower is built from petals + center -->
+        <div class="flower flower--1">
+        <div class="petal petal--1"></div>
+        <div class="petal petal--2"></div>
+        <div class="petal petal--3"></div>
+        <div class="petal petal--4"></div>
+        <div class="petal petal--5"></div>
+        <div class="petal petal--6"></div>
+        <div class="petal petal--7"></div>
+        <div class="petal petal--8"></div>
+        <div class="flower-center"></div>
+        </div>
+
+        <div class="flower flower--2">
+        <div class="petal petal--1"></div>
+        <div class="petal petal--2"></div>
+        <div class="petal petal--3"></div>
+        <div class="petal petal--4"></div>
+        <div class="petal petal--5"></div>
+        <div class="petal petal--6"></div>
+        <div class="petal petal--7"></div>
+        <div class="petal petal--8"></div>
+        <div class="flower-center"></div>
+        </div>
+
+        <div class="flower flower--3">
+        <div class="petal petal--1"></div>
+        <div class="petal petal--2"></div>
+        <div class="petal petal--3"></div>
+        <div class="petal petal--4"></div>
+        <div class="petal petal--5"></div>
+        <div class="petal petal--6"></div>
+        <div class="petal petal--7"></div>
+        <div class="petal petal--8"></div>
+        <div class="flower-center"></div>
+        </div>
+
+        <div class="flower flower--4">
+        <div class="petal petal--1"></div>
+        <div class="petal petal--2"></div>
+        <div class="petal petal--3"></div>
+        <div class="petal petal--4"></div>
+        <div class="petal petal--5"></div>
+        <div class="petal petal--6"></div>
+        <div class="petal petal--7"></div>
+        <div class="petal petal--8"></div>
+        <div class="flower-center"></div>
+        </div>
+
+        <div class="flower flower--5">
+        <div class="petal petal--1"></div>
+        <div class="petal petal--2"></div>
+        <div class="petal petal--3"></div>
+        <div class="petal petal--4"></div>
+        <div class="petal petal--5"></div>
+        <div class="petal petal--6"></div>
+        <div class="petal petal--7"></div>
+        <div class="petal petal--8"></div>
+        <div class="flower-center"></div>
+        </div>
+
+        <!-- INI BUNGA BARU UNTUK ISI BAGIAN TENGAH -->
+        <div class="flower flower--6">
+        <div class="petal petal--1"></div>
+        <div class="petal petal--2"></div>
+        <div class="petal petal--3"></div>
+        <div class="petal petal--4"></div>
+        <div class="petal petal--5"></div>
+        <div class="petal petal--6"></div>
+        <div class="petal petal--7"></div>
+        <div class="petal petal--8"></div>
+        <div class="flower-center"></div>
+        </div>
+
+        <!-- Floating petals (injected by JS too, but seed a few here) -->
+        <div class="floating-petal fp-a"></div>
+        <div class="floating-petal fp-b"></div>
+        <div class="floating-petal fp-c"></div>
+
+        <!-- Sparkle dots (injected by JS) -->
+        <div id="sparkle-container" class="sparkle-container"></div>
+      </div><!-- /bouquet-root -->
+
+      <div class="bouquet-text">
+        <p class="bouquet-line line-1">
+          Kalau aku bisa, aku pengen ngasih semua bunga yang paling indah di dunia.
+        </p>
+        <p class="bouquet-line line-2">
+          Tapi untuk sekarang, aku kasih yang ini dulu 🌷❤️
+        </p>
+        <p class="bouquet-line line-3">
+          Untuk perempuan paling cantik yang aku kenal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 5: THINGS I LOVE ABOUT YOU
+  ============================================================ -->
+  <section id="page-love" class="page page-love" hidden>
+    <div class="section-inner reveal-section">
+      <h2 class="section-title">Hal-hal yang aku suka dari kamu</h2>
+      <p class="section-sub">Banyak banget, tapi ini beberapa di antaranya ❤️</p>
+
+      <div class="love-grid">
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Senyummu</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Caramu bercerita</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Perhatian kecilmu</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Kesabaranmu</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Tingkah lucumu</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Semangatmu</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Caramu membuat hariku lebih baik</h3>
+        </div>
+        <div class="love-card glass-card love-card--item reveal-card">
+          <span class="love-icon">❤️</span>
+          <h3>Semua tentangmu</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 6: BIRTHDAY WISH (LOVE LETTER)
+  ============================================================ -->
+  <section id="page-letter" class="page page-letter" hidden>
+    <div class="section-inner reveal-section">
+      <h2 class="section-title">Sebuah Surat Untukmu</h2>
+
+      <div class="letter-card glass-card reveal-card">
+        <div class="letter-header">
+          <span class="letter-seal">❤️</span>
+          <p class="letter-date">14 Juni 2025</p>
+        </div>
+        <div class="letter-body">
+
+            <p>Hei, sayang…</p>
+          <br />
+            <p>
+                Selamat ulang tahun yang ke-20 yaa. Akhirnya kepalanya udah dua juga sekarang 🤭
+            </p>
+          <br />
+            <p>
+                Jujur, aku sempat bingung harus mulai dari mana untuk nulis ini. Rasanya ada banyak hal yang ingin aku sampaikan, tapi setiap kali mencoba menuliskannya, rasanya tetap tidak cukup untuk menggambarkan betapa berartinya kamu buat aku.
+            </p>
+          <br />
+            <p>
+                Terima kasih ya, karena sudah hadir dalam hidupku. Terima kasih untuk semua cerita yang pernah kamu bagikan, untuk semua tawa yang kita buat bersama, dan untuk semua momen sederhana yang entah kenapa selalu terasa spesial kalau dijalani sama kamu. Mungkin ada banyak hari yang sudah kita lewati, ada hari yang menyenangkan, ada juga hari yang berat. Tapi sampai hari ini, aku tetap bersyukur karena aku bisa mengenal dan memiliki seseorang seperti kamu.
+            </p>
+          <br />
+            <p>
+                Di usia yang ke-20 ini, aku berharap kamu selalu diberikan kesehatan, kebahagiaan, dan kekuatan untuk menjalani semua hal yang sedang kamu perjuangkan. Aku tahu tidak semua hari akan berjalan sesuai yang kamu inginkan, tapi aku berharap kamu selalu ingat bahwa kamu adalah orang yang hebat, kuat, dan mampu melewati semuanya. Jangan terlalu keras sama dirimu sendiri ya, karena sejauh ini kamu sudah melakukan yang terbaik.
+            </p>
+          <br />
+            <p>
+                Aku juga berharap semua mimpi yang sedang kamu kejar bisa satu per satu terwujud. Semoga langkahmu selalu dipermudah, semoga kamu dipertemukan dengan banyak hal baik, dan semoga senyum yang sering aku lihat itu tetap ada untuk waktu yang sangat lama.
+            </p>
+          <br />
+            <p>
+                Terima kasih karena sudah menjadi bagian dari hidupku. Terima kasih karena sudah membuat hari-hariku terasa lebih berwarna. Dan terima kasih karena, tanpa kamu sadari, kamu sering menjadi alasan kenapa hari yang biasa saja bisa terasa jauh lebih menyenangkan
+            </p>
+          <br />
+            <p>
+                Aku mungkin tidak bisa memberikan semua hal yang ada di dunia ini, tapi aku ingin kamu tahu kalau doa-doa baikku akan selalu menyertaimu. Hari ini, besok, dan hari-hari berikutnya.
+            </p>
+            <br /> 
+            <p>
+                Sekali lagi, selamat ulang tahun ya sayang. Semoga hari ini menjadi awal dari banyak kebahagiaan baru yang akan datang untukmu.
+            </p>
+          <br />
+            <p>Selamat ulang tahun, sayangku. ❤️</p>
+          <br />
+            <p>I love you. ❤️</p>
+          <br />
+          <p class="letter-sign">— You'r Favorite Person, Radit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 7: OUR MEMORIES (POLAROID GALLERY)
+  ============================================================ -->
+  <section id="page-memories" class="page page-memories" hidden>
+    <div class="section-inner">
+      <h2 class="section-title reveal-section">Our Memories ❤️</h2>
+      <p class="section-sub reveal-section">Some of my favorite memories have you in them.</p>
+
+      <div class="polaroid-grid" id="polaroid-grid">
+        <!--
+          ✏️ CARA MENGGANTI FOTO:
+          Letakkan foto di folder assets/ dengan nama photo1.jpg s/d photo15.jpg
+          Format yang didukung: .jpg .jpeg .png .webp
+          onerror = fallback kalau file belum ada (boleh dihapus setelah semua foto siap)
+        -->
+        <div class="polaroid-item" style="--rot: -3deg; --delay: 0s;">
+          <img src="assets/photo1.jpeg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo1.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 2deg; --delay: 0.07s;">
+          <img src="assets/photo2.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo2.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -1deg; --delay: 0.14s;">
+          <img src="assets/photo3.jpeg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo3.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 4deg; --delay: 0.21s;">
+          <img src="assets/photo4.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo4.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -2deg; --delay: 0.28s;">
+          <img src="assets/photo5.jpeg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo5.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 3deg; --delay: 0.35s;">
+          <img src="assets/photo6.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo6.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -4deg; --delay: 0.42s;">
+          <img src="assets/photo7.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo7.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 1deg; --delay: 0.49s;">
+          <img src="assets/photo8.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo8.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -2deg; --delay: 0.56s;">
+          <img src="assets/photo9.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo9.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 2deg; --delay: 0.63s;">
+          <img src="assets/photo10.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo10.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -3deg; --delay: 0.70s;">
+          <img src="assets/photo11.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo11.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 5deg; --delay: 0.77s;">
+          <img src="assets/photo12.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo12.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -1deg; --delay: 0.84s;">
+          <img src="assets/photo13.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo13.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: 3deg; --delay: 0.91s;">
+          <img src="assets/photo14.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ffd6e8?text=photo14.jpg'" />
+        </div>
+        <div class="polaroid-item" style="--rot: -2deg; --delay: 0.98s;">
+          <img src="assets/photo15.jpg" alt=""
+               onerror="this.src='https://placehold.co/400x500/1a1a2e/ff7eb6?text=photo15.jpg'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 8: FINAL MESSAGE
+  ============================================================ -->
+  <section id="page-final" class="page page-final" hidden>
+    <canvas id="stars-canvas-final"></canvas>
+
+    <div class="final-content reveal-section">
+      <p class="final-line line-1">Dan sekali lagi...</p>
+      <h2 class="final-title line-2">Happy Birthday ❤️</h2>
+      <p class="final-line line-3">
+        Terima kasih sudah hadir dan menjadi bagian dari hidupku.
+      </p>
+
+      <button id="ending-btn" class="btn-primary btn-ending">
+        Klik Terakhir 🌷
+      </button>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PAGE 9: GRAND ENDING
+  ============================================================ -->
+  <section id="page-ending" class="page page-ending" hidden>
+    <!-- Confetti canvas -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Background glow orbs -->
+    <div class="ending-glow glow--1" aria-hidden="true"></div>
+    <div class="ending-glow glow--2" aria-hidden="true"></div>
+
+    <!-- Mini bouquet re-appears -->
+    <div class="ending-bouquet" aria-hidden="true">
+      <div class="mini-flower mf-1"></div>
+      <div class="mini-flower mf-2"></div>
+      <div class="mini-flower mf-3"></div>
+    </div>
+
+    <div class="ending-content">
+      <h1 class="ending-title" id="ending-title">I Love You ❤️</h1>
+      <p class="ending-sub" id="ending-sub">Today, Tomorrow, And Every Day</p>
+    </div>
+
+    <!-- Floating hearts (injected by JS) -->
+    <div id="hearts-container" class="hearts-container" aria-hidden="true"></div>
+  </section>
+
+
+  <!-- ============================================================
+       FLOATING MUSIC PLAYER
+       Letakkan lagu di: music/song.mp3
+       Player muncul setelah password berhasil dimasukkan
+  ============================================================ -->
+  <div id="music-player" class="music-player" hidden aria-label="Music player">
+    <audio id="bg-audio" loop preload="none">
+      <source src="music/song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <button id="music-toggle" class="music-toggle" aria-label="Play / Pause musik">
+      <span id="music-icon" class="music-icon">▶</span>
+      <span class="music-vinyl" id="music-vinyl">🎵</span>
+    </button>
+
+    <div class="music-label" id="music-label">Play Music</div>
+  </div>
+
+
+  <!-- ============================================================
+       MAIN SCRIPT
+  ============================================================ -->
+  <script src="script.js"></script>
+</body>
+</html>
